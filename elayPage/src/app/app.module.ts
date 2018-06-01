@@ -9,6 +9,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 import {Service} from './services/service'
 
 
@@ -22,7 +24,8 @@ import {Service} from './services/service'
     FormsModule,
     HttpModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFontAwesomeModule
   ],
   providers: [
     Service
