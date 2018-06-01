@@ -31,7 +31,6 @@ export class MainComponent {
 		formData.append('phone', this.phone + '');
 		formData.append('pqrs', this.pqrs + '');
 
-		alert("aa "+ formData.get('email'));
 		this.service.setPQRS(formData).
 			then(pqs => {
 				alert("si funciona")

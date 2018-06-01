@@ -1,8 +1,9 @@
 // importamos el modulo Injectable de AngularJS
 import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions, Request, RequestMethod } from '@angular/http';
+import {NgForm} from '@angular/forms';
 
-// import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/toPromise';
 
 // Permitimos que este objeto se pueda inyectar con la DI
 @Injectable()
@@ -16,12 +17,13 @@ export class Service {
     // Definimos un método que recibe un parámetro y devuelve un string
     setPQRS(formData : FormData ) : Promise<any>{
 
-		// alert("2: " + email+ cel+ pqrs);
-        
-		
-		alert("a"+ JSON.stringify(formData))
+		var form = {
+			'email':formData.get('email'),
+			'phone': formData.get('phone'),
+			'pqrs': formData.get('pqrs')
+		}
 
-		return this.http.post(this.url + "setPQRS", {'phone':321})
+		return this.http.post(this.url+'setPQRS',{'form':form},this.options)
 			.toPromise()
 			.then(response => response.json())
 			.catch(err => false);

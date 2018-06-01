@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/setPQRS',(req, res)=>{
-  console.log("hola"+ JSON.stringify(req.body));
+  console.log("hola"+ JSON.stringify(req.body.form));
   res.send(true);
 })
 
